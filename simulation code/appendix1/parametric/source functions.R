@@ -1,6 +1,5 @@
 
 ################all functions
-library(VineCopula)
 library(MASS)
 library(nleqslv)
 ###helper
@@ -110,9 +109,7 @@ data_gen <- function(n)
 
 ###joint distribution
 estp11<- function(fitm.mar,fitc.mar,M,C,n,newdata)
-{
-  #psuedo MLE
-  
+{  
   fc <- expit(predict(fitc.mar,newdata = newdata))
   fm <- expit(predict(fitm.mar,newdata = newdata))
   a <- b <- c <- d <- rep(NA, n)
